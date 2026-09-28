@@ -1,10 +1,10 @@
 import socket
 soc=socket.socket(socket.AF_InET,socket.SOCK_STREAM)
-soc.bind("127.0.0.6",8080)
+soc.bind("127.0.0.1",8080)
 soc.listen()
 conn,p=soc.accept()
-print("客户端:",p)
 w=conn.recv()
+print("客户端:",w)
 conn.sendall(p)
 soc.close
 conn.close
